@@ -73,3 +73,47 @@ exactly. More advanced users may have noticed that the certificate was issued to
 * https://www.asd.gov.au/infosec/top-mitigations/mitigations-2017-table.htm
 * https://chromereleases.googleblog.com/2017/04/stable-channel-update-for-desktop.html
 * https://chromereleases.googleblog.com/2017/01/stable-channel-update-for-desktop.html
+
+### 1.2 Antivirus company evaluation
+
+On May 12th 2017, a ransomware threat that was referred to as WannaCry, was observed in
+Europe.
+
+It affected several large-scale organisations and institutions on the continent, including the British
+National Health Service (NHS).
+
+This section will analyse the detection of WannaCry by several antivirus companies, in attempt to
+display the ability of these companies to quickly respond to an emerging threat.
+This analysis was performed three times from 10:37pm on the 12th of May 2017 Greenwich Mean
+Time (GMT). All detection samples are logged in GMT.
+
+Company | Name for *WannaCry* | Detection 12-05-2017 10:37pm | Detection 12-05-2017 11:13pm | Detection 13-05-2017 4:02am
+--- | --- | :---: | :---: | :---:
+Ad-Aware | Generic.Ransom.HydraCrypt.C8B435F4 | ✓ | ✓ | ✓
+Avast | Win32:WanaCry-A [Trj] | ✓ | ✓ | ✓ 
+AVG | Generic_r.SSZ | ✓ | ✓ | ✓ 
+Avira | TR/FileCoder.724645\ | ✕ | ✕ | ✓ 
+AVware | | ✕ | ✕ | ✕ 
+BitDefender | Trojan.Ransom.WannaCryptor.D | ✓ | ✓ | ✓
+ClamAV | | ✕ | ✕ | ✕ 
+Comodo | UnclassifiedMalware | ✓ | ✓ | ✓ 
+Endgame | | ✕ | ✕ | ✕ 
+ESET-NOD32 | Win32/Filecoder.WannaCryptor.D | ✓ | ✓ | ✓
+F-Secure | Generic.Ransom.HydraCrypt.C8B435F4 | ✓ | ✓ | ✓
+Kaspersky | Trojan-Ransom.Win32.Wanna.c | ✓ | ✓ | ✓
+Malwarebytes | Ransom.WanaCrypt0r | ✓ | ✓ | ✓
+McAfee | Artemis!7BF2B57F2A20 | ✓ | ✓ | ✓
+Microsoft | Ransom:Win32/WannaCrypt | ✓ | ✓ | ✓
+NANO-Antivirus | | ✕ | ✕ | ✕ 
+Panda | Trj/RansomCrypt.K | ✓ | ✓ | ✓
+Sophos | Troj/Wanna-D | ✕ | ✕ | ✓
+SUPER AntiSpyware | | ✕ | ✕ | ✕ 
+Symantec | ML.Attribute.HighConfidence | ✓ | ✓ | ✓
+TrendMicro | RANSOM_WCRY.I | ✓ | ✓ | ✓
+VIPRE | | ✕ | ✕ | ✕
+Webroot | W32.Ransom.Wannacry | ✓ | ✓ | ✓
+ZoneAlarm | Trojan-Ransom.Win32.Wanna.c | ✓ | ✓ | ✓
+Zoner | | ✕ | ✕ | ✕ 
+
+Using Google Trends, the absolute first international searches for WannaCry via Google started on
+12-05-2017 10:00am GMT.
