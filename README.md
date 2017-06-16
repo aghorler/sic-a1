@@ -117,3 +117,34 @@ Zoner | | ✕ | ✕ | ✕
 
 Using Google Trends, the absolute first international searches for WannaCry via Google started on
 12-05-2017 10:00am GMT.
+
+**i.** To conduct this analysis, I used VirusTotal to scan a binary file belonging to WannaCry.
+
+**IMAGE**
+
+The above screenshot displays the filename and SHA256 hash of the binary file, along with a subset of the results. VirusTotal is can be used as a cross-referencing site.
+
+First-party sites that publish malware information include [McAfee Labs](https://www.mcafee.com/threat-intelligence/malware/latest.aspx), [MalwareBytes Labs](https://blog.malwarebytes.com/detections/), [Kaspersky](https://threats.kaspersky.com/en/vulnerability/?orderby=detect_date&meta_key=true&order=DESC), and [Symantec](https://www.symantec.com/security_response/landing/threats.jsp). These sites, however, may not indiscriminately publish all detected threats.
+
+**ii.** Antivirus websites vary in descriptiveness of their malware reports. Some sites, like MalwareBytes labs, publish articles explaining major incidents in simple terminology. Other websites, like McAfee labs, do not publish all threats and delay the publishing of threats they do publish.
+
+**iii.** My analysis of WannaCry detection shows that many major antivirus companies had detected the threat several hours after its genesis, although some less-major companies had not.
+
+By 12-05-2017 10:37pm GMT, 15 out of the 25 antivirus companies I analysed had detected WannaCry. This set included several well-known companies, like Kaspersky and Symantec, and discluded Comodo and Sophos.
+
+By 13-05-2017 4:02am GMT, almost five hours later, that number had increased to 18 out of 25. Antivirus companies that had not detected WannaCry by this time include SUPER Anti-Spyware and Zoner - both arguably lesser-known.
+
+**iv.** For this section, I used recently updated lists of threats from Symantec, ESET, Microsoft (for Windows Defender), and Avira. I used VirusTotal as a cross-referencing site.
+
+I used WannaCry because all four companies had documented it, and had used similar names.
+
+*WannaCry* | Symantec | Microsoft | ESET | Avira
+--- | --- | --- | --- | ---
+Detection | 12-05-2017 | 16-05-2017 | 16-05-2017 | 16-05-2017
+Order | 1 | 2 | 2 | 2
+
+The table above finds that Symantec claims to have detected the virus on the 12th of May 2017, and all others on the 16th of May 2017.
+
+My earlier analysis of the time of WannaCry detection proves this information to be false, and seriously questionable. According to VirusTotal, all four companies had detected WannaCry by the 13th of May 2017 (GMT). 
+
+My statement, based on these findings, is not to trust first-party information from antivirus companies. Documentation is largely outdated and inconsistent. Instead, rely on independent sources like VirusTotal to analyse actual malicious files against the detection of antivirus software.
