@@ -128,11 +128,7 @@ Zoner | | ✕ | ✕ | ✕
 Using Google Trends, the absolute first international searches for WannaCry via Google started on
 12-05-2017 10:00am GMT.
 
-**i.** To conduct this analysis, I used VirusTotal to scan a binary file belonging to WannaCry.
-
-**IMAGE**
-
-The above screenshot displays the filename and SHA256 hash of the binary file, along with a subset of the results. VirusTotal is can be used as a cross-referencing site.
+**i.** To conduct this analysis, I used VirusTotal to scan a binary file belonging to WannaCry. VirusTotal is can be used as a cross-referencing site.
 
 First-party sites that publish malware information include [McAfee Labs](https://www.mcafee.com/threat-intelligence/malware/latest.aspx), [MalwareBytes Labs](https://blog.malwarebytes.com/detections/), [Kaspersky](https://threats.kaspersky.com/en/vulnerability/?orderby=detect_date&meta_key=true&order=DESC), and [Symantec](https://www.symantec.com/security_response/landing/threats.jsp). These sites, however, may not indiscriminately publish all detected threats.
 
@@ -148,7 +144,7 @@ By 13-05-2017 4:02am GMT, almost five hours later, that number had increased to 
 
 I used WannaCry because all four companies had documented it, and had used similar names.
 
-*WannaCry* | Symantec | Microsoft | ESET | Avira
+iv | Symantec | Microsoft | ESET | Avira
 --- | --- | --- | --- | ---
 Detection | 12-05-2017 | 16-05-2017 | 16-05-2017 | 16-05-2017
 Order | 1 | 2 | 2 | 2
@@ -167,15 +163,11 @@ My statement, based on these findings, is not to trust first-party information f
 
 **ii.** WannaCry is ransomware. The target or aim of the malware is therefore monetary gain. WannaCry demands $300 USD in Bitcoin to decrypt a user’s files.
 
-**IMAGE**
-
 **iii.** Being ransomware, WannaCry does not aim to permanently hide itself. Instead, it seeks only to hide itself during the initial encryption phase. After that, it makes itself known with a very clear pop-up dialog.
 
 **Threat 1**: Jaff
 
 **i.** The attack strategy of Jaff is via a PDF that opens a DOCM file. The DOCM file contains a Macro with the payload. Jaff attempts to bypass Microsoft Office security mechanisms by instructing the user to enable both editing and macros with a message claiming that the document is ‘protected’.
-
-**IMAGE**
 
 **ii.** Jaff, like WannaCry, is ransomware. The target or aim of the malware is therefore monetary gain. Jaff demands 2 Bitcoin to decrypt a user’s files. This, at the time of writing this report, is approximately $4645 AUD.
 
@@ -186,8 +178,6 @@ My statement, based on these findings, is not to trust first-party information f
 **i.** The attack strategy of Proton, in this specific case, is complicated and not entirely clear. HandBrake, a popular macOS media-manipulation application, had their servers hacked to replace version 1.0.7 of the application with a malicious copy.
 
 This malicious copy contained the Proton malware. The Proton-containing HandBrake will request administrative credentials when launched. This is unlike previous genuine versions.
-
-**IMAGE**
 
 **ii.** It is believed that Proton attempts to decrypt the contents of a user’s keychain, and upload any credentials to a remote server.
 
@@ -216,10 +206,10 @@ The Enigma machine was a piece of encryption hardware used by the Germans to pro
 
 The task in this section is to encrypt a string consisting of my family name plus ten ‘L’ characters using Enigma with specified settings. This, known as the plain text is, **HORLERLLLLLLLLLL**.
 
-**IMAGE**
-
 Plain text: **HORL ERLL LLLL LLLL**
+
 Cipher text: **ZRME YLPT ZGGK KXWY**
+
 Final ground setting (Grundstellung) : **YPXG**
 
 ## 3. Defence Mechanisms
@@ -242,7 +232,18 @@ I answered this questions using coloured-coded responses, followed by an explana
 * **Potentially effective** - Effective or partially effective depending on interpretation of either the threat or the defense mechanism.
 * **Not effective** - Not effective by any realistic interpretation.
 
-**TABLE**
+3.0 | Firewalls embedded in the application | TLS/SSL | Two-factor authentication (2FA) | Signature-based intrusion detection
+--- | --- | --- | --- | ---
+**Trojans** | Partially effective. A firewall can block connections from certain known malicious hosts that may serve malware, including trojans. | Not effective. Transport security cannot guarantee connections are void of malware. | Not effective. 2FA relates to authentication. 2FA can, however, protect a user from the ramifications of a keylogger (which could potentially be delivered as a trojan) logging their primary password. | Effective. The files associated with a common trojan can be analysed by an anti-malware program. The limitation is that signature-based intrusion detection requires that an anti-malware solution is updated with the required signature before the user is attacked.
+**Social engineering** | Partially effective. Firewalls cannot protect against the human social element of social engineering, but they can block fraudulent emails based either on content or origin. | Not effective. Trusted HTTPS certificates can be issued to anyone. | Potentially effective. Some forms of social engineering involve stealing passwords. Stolen passwords are less useful when 2FA is used. 2FA, however, does not protect against all forms of social engineering. An example of this is calling a call center and requesting 2FA be disabled, or subverted, for an emergency. | Not effective. Social engineering, by its nature, involves people. People cannot be analysed in this way.
+**Spoofing** | Potentially effective. An advanced firewall could verify a host beyond the level that a client browser, or other application, would. This is limited, regardless. The firewall itself could be victim to a spoofing attack. | Partially effective. Servers can identify themselves using their HTTPS certificate. Servers can also use response headers like HTTP Public Key Pinning to force a client to only accept certain certificates. HTTPS certificates, however, can be sought by anyone from numerous authorities. Authorities have been know to erroneously issue certificates to parties without provable ownership. | Potentially effective. 2FA does not protect against spoofing attacks, but it can protect against its ramifications. And example is an attacker spoofing a web server to intercept a user’s password. Certain forms of 2FA (the types that change over time) would render this useless in the long term. | Not effective. Spoofing usually refers to spoofing of a service or host. This cannot be signatured in a means that realistically suits this question.
+**Replay attack** | Not effective. A firewall that is embedded in an application cannot prevent a third-party from interfering with a request while it is in transit. | Very effective. Transport security will prevent a third-party from listening to network requests - thus making replaying those requests impossible. | Not effective. 2FA relates to authentication It cannot prevent replay attacks, although it can prevent some ramifications of replay attacks on authentication requests. | Not effective. Replay attacks simply cannot be prevented using this defense mechanism. This is due to the nature of replay attacks, and signature-based intrusion detection.
+**Person in the middle attack** | Not effective. A firewall that is embedded in an application cannot prevent a third-party from interfering with a request or response while it is in transit. | Very effective. Transport security makes it practically impossible for a third-party to intercept the connection without the victim accepting another root certificate, or downgrading the security of the connection. | Potentially effective. Depending on the nature of the attack. 2FA cannot prevent PITM (MITM) attacks, but can protect against some of its ramifications (eg. password theft). | Not effective. Person in the middle attacks simply cannot be prevented using this defense mechanism. This is due to the nature of replay attacks, and signature-based intrusion detection.
+**Denial of service attack** | Not effective. A firewall that is embedded in an application will not prevent requests from reaching a server. | Not effective. Transport security cannot prevent unwanted requests to a server. HTTP is identical to HTTPS in this case, in that the request is received in both cases. | Not effective. 2FA relates to authentication. DoS attacks don’t care about authentication. | Potentially effective. Depending on interpretation. Network filters can implement ‘signature-based’ detection to detect a suspicious client connecting to a web server.
+**Cross-site scripting** | Not effective. A firewall that is embedded in an application cannot prevent scripts from running in any scenario, beyond scripts hosted on malicious hosts. This would not prevent cross-site scripting. | Not effective. Transport security cannot prevent the client from injecting scripts into a page, willingly or unwillingly. | Not effective. 2FA relates to authentication. Cross-site scripting does not require user authentication to work. | Partially effective. Browsers are capable of doing this to some degree when the server has correctly set the X-XSS-Protection response header.
+**SQL injection attack** | Not effective. A firewall that is embedded in an application cannot prevent SQL injection beyond blocking malicious requests. A firewall cannot judge SQL queries. | Not effective. Transport security will not filter unwanted and malicious requests. | Not effective. 2FA relates to authentication. SQL injection mainly targets databases open to the greater Internet. | Not effective. As per my answer for DoS attacks, network filters can analyse the ‘signature’ of requests for suspicious intent. This does not prevent SQL injection in all cases, so it’s not effective regardless.
+**Drive-by download attack** | Not effective. A firewall that is embedded in an application could block a download if the content is hosted on a remote and untrusted server. This is, however, very limited and not realistic. | Potentially effective. Transport security cannot guarantee connections are void of malware. TLS/SSL can prevent content from being injected into pages - thus preventing a drive-by download attack via injection during transport. | Not effective. 2FA relates to authentication. | Partially effective. Signature-based intrusion detection cannot prevent an unwanted download, but it can prevent the download of a known malicious file. The limitation is that signature-based intrusion detection requires that an anti-malware solution is updated with the required signature before the user is attacked.
+**Session hijacking** | Not effective. A firewall that is embedded in an application cannot prevent a third-party from interfering with a request or response while it is in transit. | Very effective. Transport security will encrypt a cookie while in transport. This can be boosted by setting the secure flag on cookies. | Not effective. A session can be hijacked regardless of the means of initial authentication. | Not effective. Session hijacking simply cannot be prevented using this defense mechanism. This is due to the nature of replay attacks, and signature-based intrusion detection.
 
 **Assumptions**
 
