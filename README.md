@@ -1,12 +1,12 @@
 **Attention RMIT University students:** 
 
-* Please read and understand the [Plagarism notice](https://github.com/aghorler/sic-a1/#plagarism-notice). 
+* Please read and understand the [Plagiarism notice](https://github.com/aghorler/sic-a1/#plagiarism-notice). 
 
 * Please understand that copying this assignment, without properly citing me as your source, is a violation of University policy. 
 
 * Please note that this work is published under the [MIT License](https://github.com/aghorler/sic-a1/blob/master/LICENSE), and that distributing or using any portion of this work without maintaining the copyright notice is in violation of the license. 
 
-* Please note that, by publishing this work, I am explicitly **NOT** facilitating or allowing plagarism. 
+* Please note that, by publishing this work, I am explicitly **NOT** facilitating or allowing plagiarism, and I expressly forbid this work to be used in such a manner. 
 
 ## 1. Vulnerabilities and Malware
 
@@ -258,7 +258,7 @@ the TCP/IP model.
 
 *Submitted by Aaron Holer on May 18, 2017.*
 
-## Plagarism notice
+## Plagiarism notice
 
 Plagiarism is the presentation of the work, idea or creation of another person as though it is my/our own. It is a form of cheating and is a very serious academic offence that may lead to exclusion from the University. Plagiarised material can be drawn from, and presented in, written, graphic and visual form, including electronic data and oral presentations. Plagiarism occurs when the origin of the material used is not appropriately cited.
 
