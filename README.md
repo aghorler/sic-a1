@@ -1,3 +1,13 @@
+**Attention RMIT University students:** 
+
+* Please read and understand the [Plagarism notice](https://github.com/aghorler/sic-a1/#plagarism-notice). 
+
+* Please understand that copying this assignment, without properly citing me as your source, is a violation of University policy. 
+
+* Please note that this work is published under the [MIT License](https://github.com/aghorler/sic-a1/blob/master/LICENSE), and that distributing or using any portion of this work without maintaining the copyright notice is in violation of the license. 
+
+* Please note that, by publishing this work, I am explicitly **NOT** facilitating or allowing plagarism. 
+
 ## 1. Vulnerabilities and Malware
 
 ### 1.1 National Vulnerability Database
@@ -148,3 +158,108 @@ The table above finds that Symantec claims to have detected the virus on the 12t
 My earlier analysis of the time of WannaCry detection proves this information to be false, and seriously questionable. According to VirusTotal, all four companies had detected WannaCry by the 13th of May 2017 (GMT). 
 
 My statement, based on these findings, is not to trust first-party information from antivirus companies. Documentation is largely outdated and inconsistent. Instead, rely on independent sources like VirusTotal to analyse actual malicious files against the detection of antivirus software.
+
+### 1.1 National Vulnerability Database
+
+**Threat 1**: WannaCry/WanaCrypt0r 2.0
+
+**i.** The attack strategy of WannaCry is via the MS17-010 vulnerability in Microsoft Windows SMB servers. This vulnerability was patched on March 14 2017. The vulnerability was published after a National Security Agency (NSA) leak.
+
+**ii.** WannaCry is ransomware. The target or aim of the malware is therefore monetary gain. WannaCry demands $300 USD in Bitcoin to decrypt a user’s files.
+
+**IMAGE**
+
+**iii.** Being ransomware, WannaCry does not aim to permanently hide itself. Instead, it seeks only to hide itself during the initial encryption phase. After that, it makes itself known with a very clear pop-up dialog.
+
+**Threat 1**: Jaff
+
+**i.** The attack strategy of Jaff is via a PDF that opens a DOCM file. The DOCM file contains a Macro with the payload. Jaff attempts to bypass Microsoft Office security mechanisms by instructing the user to enable both editing and macros with a message claiming that the document is ‘protected’.
+
+**IMAGE**
+
+**ii.** Jaff, like WannaCry, is ransomware. The target or aim of the malware is therefore monetary gain. Jaff demands 2 Bitcoin to decrypt a user’s files. This, at the time of writing this report, is approximately $4645 AUD.
+
+**iii.** Being ransomware, Jaff does not aim to permanently hide itself. Instead, it seeks only to hide itself during the initial encryption phase. After that, it makes itself known with a pop-up dialog.
+
+**Threat 1**: Proton in HandBrake
+
+**i.** The attack strategy of Proton, in this specific case, is complicated and not entirely clear. HandBrake, a popular macOS media-manipulation application, had their servers hacked to replace version 1.0.7 of the application with a malicious copy.
+
+This malicious copy contained the Proton malware. The Proton-containing HandBrake will request administrative credentials when launched. This is unlike previous genuine versions.
+
+**IMAGE**
+
+**ii.** It is believed that Proton attempts to decrypt the contents of a user’s keychain, and upload any credentials to a remote server.
+
+**iii.** In this scenario, Proton masquerades as a genuine application. This is, therefore, an advanced form of a Trojan - in that it isn’t obvious that the application is malicious after installation.
+
+**References**
+References for Task 1.2 and Task 1.3 are compounded.
+
+* https://www.theguardian.com/society/2017/may/12/hospitals-across-england-hit-by-large-scale-cyber-attack
+* https://virustotal.com/cs/file/b9c5d4339809e0ad9a00d4d3dd26fdf44a32819a54abf846bb9b560d81391c25/analysis
+* https://web.archive.org/web/*/https://virustotal.com/cs/file/b9c5d4339809e0ad9a00d4d3dd26fdf44a32819a54abf846bb9b560d81391c25/analysis/
+* https://www.symantec.com/security_response/landing/threats.jsp
+* https://www.microsoft.com/en-us/security/portal/threat/threats.aspx
+* http://www.virusradar.com/en/threat_encyclopaedia
+* https://www.avira.com/en/support-virus-lab
+* https://technet.microsoft.com/en-us/library/security/ms17-010.aspx
+* https://www.youtube.com/watch?v=Zy4G30kSPnY
+* https://www.malwaretech.com/2017/05/how-to-accidentally-stop-a-global-cyber-attacks.html
+* https://blog.malwarebytes.com/threat-analysis/2017/05/the-worm-that-spreads-wanacrypt0r/
+* https://blog.malwarebytes.com/cybercrime/2017/05/new-jaff-ransomware-via-necurs-asks-for-2-btc/
+* https://blog.malwarebytes.com/threat-analysis/mac-threat-analysis/2017/05/handbrake-hacked-to-drop-new-variant-of-proton-malware/
+
+## 2. Symmetric and asymmetric ciphers
+
+The Enigma machine was a piece of encryption hardware used by the Germans to protect commercial, diplomatic and military communication before and during World War Two.
+
+The task in this section is to encrypt a string consisting of my family name plus ten ‘L’ characters using Enigma with specified settings. This, known as the plain text is, **HORLERLLLLLLLLLL**.
+
+**IMAGE**
+
+Plain text: **HORL ERLL LLLL LLLL**
+Cipher text: **ZRME YLPT ZGGK KXWY**
+Final ground setting (Grundstellung) : **YPXG**
+
+## 3. Defence Mechanisms
+
+In this section, it is required that I calculate the result of my RMIT student number (3481341) modulo three, and answer questions depending on its result.
+
+**3481341 mod 3 = 0**
+
+As above, the result of my student number modulo three is zero. I will therefore, as per the assignment specification, answer question 3.0 on defense mechanisms. 
+
+**Question 3.0**
+
+This question addresses the effectiveness of various defense mechanisms on threats. Defense mechanisms are listed in the first row, and threats are listed in the first column. 
+
+I answered this questions using coloured-coded responses, followed by an explanation. My definition of these responses is below.
+
+* **Very effective** - Completely effective by any realistic interpretation.
+* **Effective** - Effective by realistic interpretation, but not without limit.
+* **Partially effective** - Only effective from certain elements of a threat, the threat in certain scenarios, or the threat’s ramifications.
+* **Potentially effective** - Effective or partially effective depending on interpretation of either the threat or the defense mechanism.
+* **Not effective** - Not effective by any realistic interpretation.
+
+**TABLE**
+
+**Assumptions**
+
+* “Firewalls embedded in the application” refers to firewalls running in the Application layer of
+the TCP/IP model.
+* “TLS/SSL” refers only to modern versions of TLS.
+
+**References**
+* https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Public-Key-Pins
+* https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection
+* https://blog.mozilla.org/security/2016/10/24/distrusting-new-wosign-and-startcom-certificates/
+* https://arstechnica.com/security/2017/03/google-takes-symantec-to-the-woodshed-for-mis-issuing-30000-https-certs/
+
+*Submitted by Aaron Holer on May 18, 2017.*
+
+## Plagarism notice
+
+Plagiarism is the presentation of the work, idea or creation of another person as though it is my/our own. It is a form of cheating and is a very serious academic offence that may lead to exclusion from the University. Plagiarised material can be drawn from, and presented in, written, graphic and visual form, including electronic data and oral presentations. Plagiarism occurs when the origin of the material used is not appropriately cited.
+
+Plagiarism includes the act of assisting or allowing another person to plagiarise or to copy my/our work.
