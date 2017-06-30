@@ -1,6 +1,6 @@
 **Attention RMIT University students:** 
 
-* Please read and understand the [Plagiarism notice](https://github.com/aghorler/sic-a1/#plagiarism-notice). 
+* Please read and understand the [Plagiarism notice](https://github.com/aghorler/sic-a1#plagiarism-notice). 
 
 * Please understand that copying this assignment, without properly citing me as your source, is a violation of University policy. 
 
